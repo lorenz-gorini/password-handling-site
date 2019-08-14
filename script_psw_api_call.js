@@ -34,10 +34,10 @@ const userAction = async () => {
    const password_input = document.getElementById("password").value
    const complexity_input = document.getElementById("select_complexity").value
 
-   const api_address = `https://password-checking-33347.herokuapp.com/${complexity_input}/${password_input}`
+   const api_address = `https://password-checking-33347.herokuapp.com/todo/1`  //${complexity_input}/${password_input}`
    const response = await fetch(api_address);
    const myJson = await response.json(); //extract JSON from the http response
    const p = document.createElement('p')
-   p.textContent = data.message
+   p.textContent = data.item
    result_message.appendChild(p)
 }
