@@ -387,7 +387,7 @@ a img.aligncenter {
 }
 
 .header_style_01 {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.24);
     display: block;
     left: 0;
     padding: 20px 40px;
@@ -1401,7 +1401,7 @@ body.realestate_version .header_style_01 .navbar-right > li.search-option form b
 
 .message-box p {
     margin-bottom: 20px;
-	color: #999999;
+	color: #e6e6e6;
 }
 
 .right-ab p{
