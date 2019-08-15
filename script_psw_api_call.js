@@ -16,7 +16,7 @@ function check_psw_func() {
          
             const p = document.createElement('p')
             p.id = "res_message"
-            p.textContent = data.message
+            p.textContent = `The password is ${data.message}`
             result_message.appendChild(p)
 
       } else {
