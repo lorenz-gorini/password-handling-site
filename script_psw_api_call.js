@@ -1,14 +1,33 @@
+function check_psw_func_lite() {   
+
+   const result_message = document.getElementById('result')
+   const password_input = document.getElementById("password").value
+   const complexity_input = document.getElementById("complexity").value;
+
+   var request = new XMLHttpRequest()
+   const api_address = `https://password-checking-33347.herokuapp.com/password/${password_input}/${complexity_input}`
+   request.open('GET', api_address, true)
+   request.onload = function() {
+      // Begin accessing JSON data here
+      var data = JSON.parse(this.response)
+      if (request.status >= 200 && request.status < 400) {
+            result_message.value =  data.message
+      } else {
+         const errorMessage = document.createElement('marquee')
+         errorMessage.textContent = "The API is not working. Damn it!"
+         result_message.appendChild(errorMessage)
+      }
+   }
+   request.send()
+}
 function check_psw_func() {   
 
-   const result_message = document.getElementById('password_result_message')
+   const result_message = document.getElementById('result')
    const password_input = document.getElementById("password").value
    const complexity_input = document.getElementById("select_complexity").value;
 
-   
-
-
    var request = new XMLHttpRequest()
-   const api_address = `https://password-checking-33347.herokuapp.com/password/Lor3_/2`  // `https://password-checking-33347.herokuapp.com/${complexity_input}/${password_input}`
+   const api_address = `https://password-checking-33347.herokuapp.com/password/${password_input}/${complexity_input}`
    request.open('GET', api_address, true)
    request.onload = function() {
       // Begin accessing JSON data here
