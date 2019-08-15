@@ -2,6 +2,7 @@ function check_psw_func() {
 
    const result_message = document.getElementById('result')
    const prev_message = document.getElementById("res_message")
+   // remove the previous message if any
    if (prev_message) { prev_message.remove() }
    const password_input = document.getElementById("password").value
    const complexity_input = document.getElementById("select_complexity").value;
@@ -13,11 +14,12 @@ function check_psw_func() {
       // Begin accessing JSON data here
       var data = JSON.parse(this.response)
       if (request.status >= 200 && request.status < 400) {
-         
-            const p = document.createElement('p')
-            p.id = "res_message"
-            p.textContent = `The password is ${data.message}`
-            result_message.appendChild(p)
+
+         //create the new element which will dislay the password
+         const p = document.createElement('p')
+         p.id = "res_message"
+         p.textContent = `The password is ${data.message}`
+         result_message.appendChild(p)
 
       } else {
          const errorMessage = document.createElement('marquee')
