@@ -28,6 +28,8 @@ function check_psw_func() {
    request.send()
 }
 
+// SECOND OPTION to call the API after clicking the button using Fetch
+
 const userAction = async () => {
 
    const result_message = document.getElementById('password_result_message')
@@ -40,4 +42,26 @@ const userAction = async () => {
    const p = document.createElement('p')
    p.textContent = data.item
    result_message.appendChild(p)
+}
+
+// THIRD OPTION: fetch API
+
+function check_psw_func_fetch() { 
+   fetch("https://password-checking-33347.herokuapp.com/todo/1").then(response => {
+      if (response.ok) {
+         console.log("Contenuto ricevuto");
+      }
+      if (response.status >= 100 && response.status < 200) {
+         console.log("Informazioni per il client");
+      }
+      if (response.status >= 300 && response.status < 399) {
+         console.log("Redirezione");
+      }
+      if (response.status >= 400 && response.status < 499) {
+         console.log("Richiesta errata");
+      }
+      if (response.status >= 500 && response.status < 599) {
+         console.log("Errore sul server");
+      }
+   }).catch(error => console.log("Si è verificato un errore!"))
 }
