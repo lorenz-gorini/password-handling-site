@@ -8,7 +8,7 @@ function check_psw_func() {
 
 
    var request = new XMLHttpRequest()
-   var api_address = `https://password-checking-33347.herokuapp.com/password/Lor3_/2`  // `https://password-checking-33347.herokuapp.com/${complexity_input}/${password_input}`
+   const api_address = `https://password-checking-33347.herokuapp.com/password/Lor3_/2`  // `https://password-checking-33347.herokuapp.com/${complexity_input}/${password_input}`
    request.open('GET', api_address, true)
    request.onload = function() {
       // Begin accessing JSON data here
